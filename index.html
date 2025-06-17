@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Module 4 HTML Assignment</title>
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: #fafafa;
+      color: #222;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+    }
+
+    /* Navigation styles */
+    nav {
+      margin-bottom: 2rem;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0.75rem 1rem;
+      gap: 2rem;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #005a99;
+      outline: none;
+    }
+
+    /* Headings */
+    h1, h2 {
+      color: #111;
+      margin-bottom: 1rem;
+    }
+
+    /* Form styles */
+    form {
+      background: #fff;
+      padding: 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    form label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+      resize: vertical;
+    }
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form textarea:focus {
+      border-color: #007acc;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 122, 204, 0.5);
+    }
+    form input[type="submit"] {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+    form input[type="submit"]:hover,
+    form input[type="submit"]:focus {
+      background-color: #005a99;
+      outline: none;
+    }
+
+    /* Radio button group */
+    .radio-group p {
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .radio-group label {
+      margin-right: 1.5rem;
+      cursor: pointer;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 0.25rem;
+      cursor: pointer;
+    }
+
+    /* Table styles */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 2rem;
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    thead {
+      background-color: #007acc;
+      color: #fff;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-size: 1rem;
+    }
+    tbody tr:hover {
+      background-color: #f1faff;
+    }
+
+    /* Image gallery */
+    .gallery {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img.rounded {
+      border-radius: 15px;
+      border: 2px solid #ccc;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="#" aria-current="page">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome to My HTML Assignment</h1>
+
+    <!-- Contact Form Section -->
+    <section aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Contact Us</h2>
+      <form action="#" method="post" novalidate>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          required
+          aria-required="true"
+          autocomplete="name"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@mail.com"
+          required
+          aria-required="true"
+          autocomplete="email"
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message here..."
+        ></textarea>
+
+        <!-- BONUS: Radio buttons -->
+        <fieldset class="radio-group" aria-describedby="findus-desc">
+          <legend>How did you find us?</legend>
+          <p id="findus-desc" class="sr-only">
+            Select one option describing how you found our site
+          </p>
+          <input type="radio" id="google" name="source" value="Google" />
+          <label for="google">Google</label>
+
+          <input type="radio" id="social" name="source" value="Social Media" />
+          <label for="social">Social Media</label>
+
+          <input type="radio" id="friend" name="source" value="Friend" />
+          <label for="friend">Friend</label>
+        </fieldset>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+
+    <!-- Product Table Section -->
+    <section aria-labelledby="product-list-title">
+      <h2 id="product-list-title">Product List</h2>
+      <table role="table" aria-describedby="product-table-desc">
+        <caption id="product-table-desc" class="sr-only">
+          Table showing product names, prices, and quantities available
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wireless Mouse</td>
+            <td>$25.99</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>Bluetooth Speaker</td>
+            <td>$45.50</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>USB-C Cable</td>
+            <td>$10.00</td>
+            <td>20</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Gallery Section -->
+    <section aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Gallery</h2>
+      <div class="gallery">
+        <img
+          src="https://placehold.co/300x200"
+          alt="Placeholder image"
+          width="300"
+          height="200"
+        />
+        <img
+          src="https://placehold.co/300x200?text=Rounded+Image"
+          alt="Placeholder image with rounded border"
+          class="rounded"
+          width="300"
+          height="200"
+        />
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
+
+
+
+
+
+
